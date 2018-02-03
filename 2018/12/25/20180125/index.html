@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>在Windows系统环境下利用Github+Hexo搭建 自己的 个人博客 | 抹茶君de博客</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="-博客" />
+    
+    <meta name="description" content="这是我第一次更新我的博文，如果有些地方可能会有一些不成熟的地方，请各位谅解O(∩_∩)O   注：本文搭建环境只适用在windows系统环境下！！！ 首先，我先介绍一下常见的格人博客搭建方案  搭建个人博客通常有如下选择： WorkPress Github+Jekyll GitHubPages + Hexo     为什么选择 GitHubPages + Hexo 呢？我先解释下为什么使用 Gi">
+<meta name="keywords" content="-博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Windows系统环境下利用Github+Hexo搭建 自己的 个人博客">
+<meta property="og:url" content="http://yoursite.com/2018/12/25/20180125/index.html">
+<meta property="og:site_name" content="抹茶君de博客">
+<meta property="og:description" content="这是我第一次更新我的博文，如果有些地方可能会有一些不成熟的地方，请各位谅解O(∩_∩)O   注：本文搭建环境只适用在windows系统环境下！！！ 首先，我先介绍一下常见的格人博客搭建方案  搭建个人博客通常有如下选择： WorkPress Github+Jekyll GitHubPages + Hexo     为什么选择 GitHubPages + Hexo 呢？我先解释下为什么使用 Gi">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://diy-green.github.io/uploads/shiyongjisshu/geren_blog/geren_blog_5.png">
+<meta property="og:updated_time" content="2018-01-24T16:32:41.514Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Windows系统环境下利用Github+Hexo搭建 自己的 个人博客">
+<meta name="twitter:description" content="这是我第一次更新我的博文，如果有些地方可能会有一些不成熟的地方，请各位谅解O(∩_∩)O   注：本文搭建环境只适用在windows系统环境下！！！ 首先，我先介绍一下常见的格人博客搭建方案  搭建个人博客通常有如下选择： WorkPress Github+Jekyll GitHubPages + Hexo     为什么选择 GitHubPages + Hexo 呢？我先解释下为什么使用 Gi">
+<meta name="twitter:image" content="http://diy-green.github.io/uploads/shiyongjisshu/geren_blog/geren_blog_5.png">
+    
+
+    
+        <link rel="alternate" href="/" title="抹茶君de博客" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">让程序改变世界</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Testing/">Testing</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/公告/">公告</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/博客/">博客</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/博客/">博客</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-20180125" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        在Windows系统环境下利用Github+Hexo搭建 自己的 个人博客
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/12/25/20180125/" class="article-date">
+            <time datetime="2018-12-24T16:32:00.000Z" itemprop="datePublished">2018-12-25</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/博客/">-博客</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <blockquote>
+<p>这是我第一次更新我的博文，如果有些地方可能会有一些不成熟的地方，请各位谅解O(∩_∩)O</p>
+</blockquote>
+<hr>
+<p>注：本文搭建环境只适用在windows系统环境下！！！</p>
+<h3 id="首先，我先介绍一下常见的格人博客搭建方案"><a href="#首先，我先介绍一下常见的格人博客搭建方案" class="headerlink" title="首先，我先介绍一下常见的格人博客搭建方案"></a>首先，我先介绍一下常见的格人博客搭建方案</h3><blockquote>
+<ul>
+<li>搭建个人博客通常有如下选择：<ol>
+<li>WorkPress</li>
+<li>Github+Jekyll</li>
+<li>GitHubPages + Hexo</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h3 id="为什么选择-GitHubPages-Hexo-呢？"><a href="#为什么选择-GitHubPages-Hexo-呢？" class="headerlink" title="为什么选择 GitHubPages + Hexo 呢？"></a>为什么选择 GitHubPages + Hexo 呢？</h3><p>我先解释下为什么使用 GitHubPages + Hexo，<br><strong>主要是出于以下几点考虑：</strong></p>
+<ul>
+<li>WorkPress :一般需要独立域名，是要收费的，作为一个学生党还是高三的，所以付费的项目就不要搞了。</li>
+<li>Github + jekell :虽然免费，但是呢搭建的时候感觉特别的麻烦，需要过多的代码。</li>
+</ul>
+<p>所以，使用 GitHubPages + Hexo 是最为简单的一种免费的搭建个人博客的方式。</p>
+<blockquote>
+<p><strong>我介绍下 Hexo</strong><br>Hexo 是一个基于 Nodejs 的静态博客网站生成器</p>
+<ul>
+<li>特点：<ul>
+<li>不可思议的快速 ─ 只要一眨眼静态文件即生成完成</li>
+<li>支持 Markdown</li>
+<li>仅需一道指令即可部署到 GitHub Pages 和 Heroku</li>
+<li>已移植 Octopress 插件</li>
+<li>高扩展性、自订性</li>
+<li>兼容于 Windows, Mac &amp; Linux</li>
+</ul>
+</li>
+</ul>
+<p>所以 Hexo + Github 的使用者很多。。。</p>
+</blockquote>
+<p>##步入正题 开始搭建博客<br>跟着我做，简简单单5-7分钟你即可拥有自己的个人博客。开始吧！</p>
+<h3 id="一、创建一个-Github-仓库"><a href="#一、创建一个-Github-仓库" class="headerlink" title="一、创建一个 Github 仓库"></a>一、创建一个 Github 仓库</h3><h4 id="首先需要创建一个-Github-仓库"><a href="#首先需要创建一个-Github-仓库" class="headerlink" title="首先需要创建一个 Github 仓库"></a>首先需要创建一个 Github 仓库</h4><p>如果没有账号，请前往<a href="https://github.com/join" target="_blank" rel="noopener">GitHub</a>页面完成注册<br><code>1. 用户名</code> <code>2. 邮箱地址</code> <code>3. 密码</code> <code>4. Create an account</code><br>如果有账号，请前往<a href="https://github.com/login" target="_blank" rel="noopener">GitHub</a>页面登入<br><code>1. 用户名或邮箱地址</code> <code>2.密码</code> <code>3.Sign in</code></p>
+<p><strong>创建仓库（请看图操作）</strong><br><img src="http://diy-green.github.io/uploads/shiyongjisshu/geren_blog/geren_blog_5.png" alt="创建仓库：步骤1"></p>
+<p><img src="http://diy-green.github.io/uploads/shiyongjisshu/geren_blog/geren_blog_6.png" alt="创建仓库：步骤2"></p>
+<p><code>&quot;步骤二&quot;中，注意 Respository name 中一定要输入：你的用户名.github.io。</code><br><code>其他地方不用修改，然后直接点 ”Create repository“ 按钮完成创建即可。</code></p>
+<h3 id="二、本地环境准备"><a href="#二、本地环境准备" class="headerlink" title="二、本地环境准备"></a>二、本地环境准备</h3><p><em>需要安装两个环境：Git 和 Nodejs</em></p>
+<p><strong>Git</strong></p>
+<ol>
+<li>下载 Git，打开 <a href="https://git-scm.com/download/" target="_blank" rel="noopener">Git下载页面</a>，选择选择 Downloads 下面的 Windows（按照你的系统选择 32 位或者 64 位）。</li>
+<li>安装 Git，双击安装文件 -&gt; Next -&gt; Next  。。。<br><strong>Nodwjs</strong></li>
+<li>下载 Nodejs，打开 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Nodejs下载界面</a>，选择适合你当年系统版本的安装包。</li>
+<li>安装 Nodejs，双击安装文件 -&gt; Next -&gt; Next  。。。</li>
+</ol>
+<h3 id="三、Hexo-安装"><a href="#三、Hexo-安装" class="headerlink" title="三、Hexo 安装"></a>三、Hexo 安装</h3><p><strong>1.打开命令行</strong><br>Win+R，输入cmd，回车<br><strong>2.输入命令</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
+<h3 id="四、创建本地博客"><a href="#四、创建本地博客" class="headerlink" title="四、创建本地博客"></a>四、创建本地博客</h3><p>1、创建一个文件夹，如：e:\blog<br>2、打开命令行，定位到 E:\blog<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd E:\blog</span><br></pre></td></tr></table></figure></p>
+<p>3、执行初始化本地博客命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
+<p>4、继续再Blog目录下执行如下命令，生成静态页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate // hexo g 也可以</span><br></pre></td></tr></table></figure></p>
+<p>5、启动本地服务，进行文章预览调试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server // hexo s 也行</span><br></pre></td></tr></table></figure></p>
+<p>6、浏览器输入<a href="http://localhost:4000进行测试" target="_blank" rel="noopener">http://localhost:4000进行测试</a></p>
+<hr>
+<blockquote>
+<p>到目前为止，本地博客已经初步完成，下面开始，我们要将这些东西部署到Github</p>
+</blockquote>
+<h3 id="五、将本地博客部署到Github"><a href="#五、将本地博客部署到Github" class="headerlink" title="五、将本地博客部署到Github"></a>五、将本地博客部署到Github</h3><p>首先说下文件目录结构</p>
+<p>├── .deploy #需要部署的文件<br>├── node_modules #Hexo插件<br>├── public #生成的静态网页文件<br>├── scaffolds #模板<br>├── source #博客正文和其他源文件，404、favicon、CNAME 都应该放在这里<br>| ├── _drafts #草稿<br>| └── _posts #文章<br>├── themes #主题<br>├── _config.yml #全局配置文件<br>└── package.json</p>
+<p><strong>站点配置文件基本项修改</strong><br><em>关于 Hexo 配置的详细信息请前往<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">Hexo的官方文档</a></em><br>首先打开本地博客目录下的 _config.yml（全局配置文件）<br><code>注：推荐先复制一份打开本地博客目录下的 _config.yml 文件，命名为 _config_bak.yml，做为备份，以防改错</code></p>
+<p>这里先看看最基础的配置，也就是必须要改动的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">title: xxx  # 博客的名字，也称站点名称</span><br><span class="line"></span><br><span class="line">author: xxx # 作者名字</span><br><span class="line"></span><br><span class="line">description: xxx # 对站点的描述，搜索引擎会抓取，可以自定义（这个还是加上比较好）</span><br><span class="line"></span><br><span class="line">language: zh-Hans # 语言 简体中文</span><br><span class="line"></span><br><span class="line">theme: next  # 配置主题</span><br><span class="line"></span><br><span class="line">deploy: # 部署相关配置</span><br><span class="line">    type: git # 使用 Git 提交</span><br><span class="line">    repo: https://github.com/xxx/xxx.github.io.git # 就是存放博客的仓库地址</span><br></pre></td></tr></table></figure></p>
+<p><em>上述配置是必须要修改的，再次强调，键值之间一定要 ”加空格“，请在文本编辑器中搜索定位后再修改。</em></p>
+<p><strong>站点配置文件详细配置示例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: http://hexo.io/docs/configuration.html</span><br><span class="line">## Source: https://github.com/hexojs/hexo/</span><br><span class="line"># Site #站点信息</span><br><span class="line">title:  #标题</span><br><span class="line">subtitle:  #副标题</span><br><span class="line">description:  #站点描述，给搜索引擎看的</span><br><span class="line">author:  #作者</span><br><span class="line">email:  #电子邮箱</span><br><span class="line">language: zh-CN #语言</span><br><span class="line"># URL #链接格式</span><br><span class="line">url:  #网址</span><br><span class="line">root: / #根目录</span><br><span class="line">permalink: :year/:month/:day/:title/ #文章的链接格式</span><br><span class="line">tag_dir: tags #标签目录</span><br><span class="line">archive_dir: archives #存档目录</span><br><span class="line">category_dir: categories #分类目录</span><br><span class="line">code_dir: downloads/code</span><br><span class="line">permalink_defaults:</span><br><span class="line"># Directory #目录</span><br><span class="line">source_dir: source #源文件目录</span><br><span class="line">public_dir: public #生成的网页文件目录</span><br><span class="line"># Writing #写作</span><br><span class="line">new_post_name: :title.md #新文章标题</span><br><span class="line">default_layout: post #默认的模板，包括 post、page、photo、draft（文章、页面、照片、草稿）</span><br><span class="line">titlecase: false #标题转换成大写</span><br><span class="line">external_link: true #在新选项卡中打开连接</span><br><span class="line">filename_case: 0</span><br><span class="line">render_drafts: false</span><br><span class="line">post_asset_folder: false</span><br><span class="line">relative_link: false</span><br><span class="line">highlight: #语法高亮</span><br><span class="line">  enable: true #是否启用</span><br><span class="line">  line_number: true #显示行号</span><br><span class="line">  tab_replace:</span><br><span class="line"># Category &amp; Tag #分类和标签</span><br><span class="line">default_category: uncategorized #默认分类</span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br><span class="line"># Archives</span><br><span class="line">2: 开启分页</span><br><span class="line">1: 禁用分页</span><br><span class="line">0: 全部禁用</span><br><span class="line">archive: 2</span><br><span class="line">category: 2</span><br><span class="line">tag: 2</span><br><span class="line"># Server #本地服务器</span><br><span class="line">port: 4000 #端口号</span><br><span class="line">server_ip: localhost #IP 地址</span><br><span class="line">logger: false</span><br><span class="line">logger_format: dev</span><br><span class="line"># Date / Time format #日期时间格式</span><br><span class="line">date_format: YYYY-MM-DD #参考http://momentjs.com/docs/#/displaying/format/</span><br><span class="line">time_format: H:mm:ss</span><br><span class="line"># Pagination #分页</span><br><span class="line">per_page: 10 #每页文章数，设置成 0 禁用分页</span><br><span class="line">pagination_dir: page</span><br><span class="line"># Disqus #Disqus评论，替换为多说</span><br><span class="line">disqus_shortname:</span><br><span class="line"># Extensions #拓展插件</span><br><span class="line">theme: landscape-plus #主题</span><br><span class="line">exclude_generator:</span><br><span class="line">plugins: #插件，例如生成 RSS 和站点地图的</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">- hexo-generator-sitemap</span><br><span class="line"># Deployment #部署，将 lmintlcx 改成用户名</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: 刚刚github创库地址.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>是不是有点迫不及待想看看效果了，那好，先在本地跑起来试试，步骤如下：</p>
+<p>1.打开命令行，定位到你本地博客的目录<br>  <code>cd E:\blog</code><br>  2.输入命令：启动本地服务预览命令<br>  <code>hexo server</code><br>    启动成功可以看到提示按照提示用浏览器打开提示网址，即可看到你的本地博客了!</p>
+</blockquote>
+<p><strong>最后执行下列指令即可完成部署</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>如果是第一次部署，终端会提示要求输入用户名和密码。<br>如果提示<code>[info] Deploy done: git</code>即代表部署成功！<br>过几分钟打开 <a href="http://你的用户名.github.io" target="_blank" rel="noopener">http://你的用户名.github.io</a> 即可看到你的个人博客了。<br>以后要发布新文章，执行上述命令即可。</p>
+<blockquote>
+<p>注意事项</p>
+<ol>
+<li><p>Git 的 bug<br>有个老版本的 Git 有个 bug，上传的时候会提示非法域名这类的，要解决该问题，最简单的方法就是更新 Git，用最新版的 Git</p>
+</li>
+<li><p>关于页面空白<br>主题配置文件中的 ”duoshuo_info“ 下的 ”user_id“ 如果是非 ”0“，会导致该问题</p>
+</li>
+</ol>
+<p>3.特殊字符导致报错<br>如添加新博客的时候报错了，而且提示的是 js 中某些地方报错，那么很可能是 md 文件中存在特殊字符（不是正常显示的字符，不是说特殊符号，能正常显示的都不是这里说的特殊字符），把特殊字符删除即可</p>
+<p>4.Hexo 命令的常见报错<br>可以参考这篇文章：HEXO+Github,搭建属于自己的博客<br>补充：关于 hexo d 失败<br>如果你的防火墙打开了，或者安装某些安全防护软件，那么建议暂时关闭，这些可能导致部署到 GitHub 失败</p>
+<p>5.使用hexo，如果换了电脑怎么更新博客？<br>这个问题相信大家都关心，知乎上有比较详细的解答。我说一下我的解决方法吧！<br>方案一：<br>在新电脑上配置好本地博客环境，然后，直接拷贝原电脑上的 xxx.github.io 文件夹到新电脑上即可。<br>方案二：<br>将 xxx.github.io 文件夹同步到网上(如：Dropbox 等)，其他任何电脑（配置好了本地博客环境）要用的时候，从网上同步下来即可。</p>
+</blockquote>
+<p>##至此，在Windows系统环境下利用Github+Hexo搭建自己的个人博客，就到此结束了，喜欢的朋友，请扫描二维码打赏我， 或去我的直播间点下订阅。我们下次再见！！！</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2018/12/25/20180125/" data-id="cjd7n59w5000b4kux6pj3utq8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/12/24/20180124/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">博客更新公告</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/25/20180125/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://diy-green.github.io/uploads/shiyongjisshu/geren_blog/geren_blog_5.png)" alt="在Windows系统环境下利用Github+Hexo搭建 自己的 个人博客" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/博客/">博客</a></p>
+                            <p class="item-title"><a href="/2018/12/25/20180125/" class="title">在Windows系统环境下利用Github+Hexo搭建 自己的 个人博客</a></p>
+                            <p class="item-date"><time datetime="2018-12-24T16:32:00.000Z" itemprop="datePublished">2018-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/24/20180124/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/公告/">公告</a></p>
+                            <p class="item-title"><a href="/2018/12/24/20180124/" class="title">博客更新公告</a></p>
+                            <p class="item-date"><time datetime="2018-12-23T16:00:00.000Z" itemprop="datePublished">2018-12-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/20/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Testing/">Testing</a></p>
+                            <p class="item-title"><a href="/2018/12/20/hello-world/" class="title">Hello World!</a></p>
+                            <p class="item-date"><time datetime="2018-12-20T04:32:04.000Z" itemprop="datePublished">2018-12-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/20/20180120/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a></p>
+                            <p class="item-title"><a href="/2018/12/20/20180120/" class="title">测试！</a></p>
+                            <p class="item-date"><time datetime="2018-12-20T02:32:04.000Z" itemprop="datePublished">2018-12-20</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/公告/">公告</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Welcome-to-my-blog/">-Welcome to my blog!</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">-python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公告/">-公告</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">-博客</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Welcome-to-my-blog/" style="font-size: 10px;">-Welcome to my blog!</a> <a href="/tags/python/" style="font-size: 10px;">-python</a> <a href="/tags/公告/" style="font-size: 10px;">-公告</a> <a href="/tags/博客/" style="font-size: 10px;">-博客</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 熊猫TV丶抹茶君</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2018/12/25/20180125/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
